@@ -11,19 +11,20 @@
           <ion-title size="large">Tab 1</ion-title>
         </ion-toolbar>
       </ion-header>
-    
-      <ExploreContainer name="Tab 1 page" />
+     {{failStore.getFirstComplexArrHey}}
+     <ion-button @click="navigateToAnotherPage">To the other page</ion-button>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+<script lang="ts" setup>
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/vue';
+import { useFailStore } from '@/stores/fail';
+import router from '@/router';
 
-export default  defineComponent({
-  name: 'Tab1Page',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
-});
+const failStore = useFailStore()
+
+const navigateToAnotherPage = () => {
+  router.push('/anotherpage/')
+}
 </script>
