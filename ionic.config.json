@@ -1,0 +1,7 @@
+{
+  "name": "ionic-vue-pinia-fail",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
